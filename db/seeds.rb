@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+50.times do
+  task = Task.new(title: Faker::Name.unique.name,
+              details: Faker::Lorem.sentence,
+              completed: rand(2) == 1 ? true : false )
+  task.save
+end
